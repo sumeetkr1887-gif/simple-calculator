@@ -1,48 +1,34 @@
-import java.util.Scanner;
+print("----- SIMPLE CALCULATOR -----")
 
-public class StudentGradeCalculator {
+num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: "))
 
-    public static void main(String[] args) {
+print("\nChoose Operation")
+print("1. Addition (+)")
+print("2. Subtraction (-)")
+print("3. Multiplication (*)")
+print("4. Division (/)")
 
-        Scanner sc = new Scanner(System.in);
+choice = input("Enter your choice (1-4): ")
 
-        System.out.print("Enter number of subjects: ");
-        int subjects = sc.nextInt();
+if choice == "1":
+    result = num1 + num2
+    print("Answer =", result)
 
-        int total = 0;
+elif choice == "2":
+    result = num1 - num2
+    print("Answer =", result)
 
-        for (int i = 1; i <= subjects; i++) {
+elif choice == "3":
+    result = num1 * num2
+    print("Answer =", result)
 
-            System.out.print("Enter marks of Subject " + i + ": ");
-            int marks = sc.nextInt();
+elif choice == "4":
+    if num2 != 0:
+        result = num1 / num2
+        print("Answer =", result)
+    else:
+        print("Division by zero is not possible.")
 
-            total = total + marks;
-        }
-
-        double average = (double) total / subjects;
-
-        String grade;
-
-        if (average >= 90) {
-            grade = "A+";
-        } else if (average >= 80) {
-            grade = "A";
-        } else if (average >= 70) {
-            grade = "B";
-        } else if (average >= 60) {
-            grade = "C";
-        } else if (average >= 50) {
-            grade = "D";
-        } else {
-            grade = "Fail";
-        }
-
-        System.out.println("\n----- RESULT -----");
-        System.out.println("Total Marks = " + total);
-        System.out.println("Average Percentage = " + average);
-        System.out.println("Grade = " + grade);
-
-        sc.close();
-    }
-}# simple-calculator
-This project is a Simple Calculator made with Java. It does math like Addition and Subtraction and Multiplication and Division. The Simple Calculator is made to help people who're new, to Java learn the basics of Java like how to get user input use conditional statements make methods and use arithmetic operators like the Simple Calculator does.  
+else:
+    print("Invalid choice.")
